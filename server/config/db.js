@@ -1,13 +1,10 @@
 import mongoose from "mongoose";
 
+// Function to connect to the MongoDB database
 const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGODB_URI);
-    console.log("✅ Database Connected Successfully");
-  } catch (error) {
-    console.error("❌ Database Connection Failed:", error.message);
-    process.exit(1);
-  }
-};
+    mongoose.connection.on ('connected',() => console.log('Database Connected'));
+  
+    await mongoose.connect(`${process.env.MONGODB_URI}/Fitnessvivek`);
+}
 
-export default connectDB;
+export default connectDB

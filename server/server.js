@@ -3,8 +3,9 @@ import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './config/db.js'
 import './config/instrument.js'
+import { Webhook } from 'svix'
 import * as Sentry from "@sentry/node";
-import { clerkWebhooks } from './controller/webhooks.js'
+import { clerkWebhooks } from './controllers/webhooks.js'
 
 
 //Initalize Express
